@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/add-course}" th:object="${course}" method="post">
+    <input type="text" th:field="*{title}" placeholder="Course Title">
+
+    <input type="text" th:field="*{description}" placeholder="DESCRIPTION">
+    <input type="text" th:field="*{instructor}" placeholder="Instructor">
+
+    <button type="submit"> Add</button>
+
+</form>
+
+</body>
+</html>

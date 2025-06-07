@@ -1,0 +1,9 @@
+
+<body>
+<h2>Admin Dashboard</h2>
+<a href="/admin/add-course"> Add Course</a>
+
+<ul>
+    <li th:each="course : ${courses}" th:text="${course.title}"> </li>
+</ul>
+</body>
