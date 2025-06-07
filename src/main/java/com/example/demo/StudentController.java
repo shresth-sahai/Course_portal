@@ -21,13 +21,15 @@ public class StudentController {
         return "student-dashboard";
     }
     @PostMapping("/enroll")
-    public String enroll(@RequestParam Long courseId, Authentication auth){
-        User user =userService.getByUsername(auth.getName());
-        Course course=courseService.getAllCOurses().stream()
-                .filter(c->c.getId().equals(courseId))
+    public String enroll(@RequestParam Long courseId, Authentication auth) {
+        User user = userService.getByUsername(auth.getName());
+        Course course = courseService.getAllCOurses().stream()
+                .filter(c -> c.getId().equals(courseId))
                 .findFirst().orElse(null);
-        user.getCourses().add(course);
-        userService.save(user);
-        return "redirect:/student/dashbaord";
+        if (course != null) {
+            user.getCourses().add(course);
+            userService.save(user);
+        }
+        return "redirect:/student/dashboard";
     }
 }

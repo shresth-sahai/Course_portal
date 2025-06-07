@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2>Student Dashboard</h2>
+<ul>
+    <li th:each="course : ${courses}">
+        <span th:text="${course.title}">Course Title</span>
+        <form th:action="@{/student/enroll}" method="post">
+            <input type="hidden" name="courseId" th:value="${course.id}"/>
+            <button type="submit">Enroll</button>
+        </form>
+    </li>
+</ul>

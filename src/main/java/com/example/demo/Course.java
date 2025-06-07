@@ -10,10 +10,12 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String desciption;
-    private String instructor;
 
+    private String title;
+
+    private String description;
+
+    private String instructor;
     public Long getId() {
         return id;
     }
@@ -31,11 +33,11 @@ public class Course {
     }
 
     public String getDesciption() {
-        return desciption;
+        return description;
     }
 
     public void setDesciption(String desciption) {
-        this.desciption = desciption;
+        this.description = desciption;
     }
 
     public String getInstructor() {
